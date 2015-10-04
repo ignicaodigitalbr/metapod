@@ -1,0 +1,30 @@
+{
+  "name": "tag",
+  "main": "tag.js",
+  "version": "1.0.0-beta.1",
+  "authors": [
+    "Vitor Nogueira <vnweb.contato@gmail.com>"
+  ],
+  "description": "HTML generator",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "tag",
+    "html",
+    "javascript",
+    "elements"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ignicaodigitalbr/tag",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

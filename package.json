@@ -1,0 +1,39 @@
+{
+  "name": "tag",
+  "version": "1.0.0-beta.1",
+  "description": "HTML generator",
+  "main": "src/tag.js",
+  "scripts": {
+    "test": "karma start --single-run",
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "babel src/tag.js --modules umd -o dist/tag.js && uglifyjs dist/tag.js -o dist/tag.min.js",
+    "watch": "babel src/tag.js -w --modules umd -o dist/tag.js"
+  },
+  "author": "Vitor Nogueira <vnweb.contato@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ignicaodigitalbr/tag.git"
+  },
+  "keywords": [
+    "tag",
+    "html",
+    "javascript",
+    "elements"
+  ],
+  "bugs": {
+    "url": "https://github.com/ignicaodigitalbr/tag/issues"
+  },
+  "homepage": "https://github.com/ignicaodigitalbr/tag#readme",
+  "devDependencies": {
+    "babel": "5.8.23",
+    "babelify": "6.3.0",
+    "karma": "0.13.10",
+    "karma-browserify": "4.4.0",
+    "karma-jasmine": "0.3.6",
+    "karma-phantomjs-launcher": "0.2.1",
+    "phantomjs": "1.9.18",
+    "phantomjs-polyfill": "0.0.1",
+    "uglify-js": "2.4.24"
+  }
+}
