@@ -21,8 +21,8 @@
     {
       className: 'btn btn-default',
       events: {
-        click(event) {
-          alert('Clicked!')
+        click() {
+          alert('Clicked!');
         },
         mousemove(event) {
           this.style.left = event.x - 50 + 'px';

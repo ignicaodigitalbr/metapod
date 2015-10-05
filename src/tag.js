@@ -84,7 +84,7 @@ _private.appenders = {
 /**
  * Builder element
  * @param  {String}     name
- * @param  {Arguments}  attr
+ * @param  {Arguments}  attrs
  *
  * @return {HTMLObject} builded element
  */
