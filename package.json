@@ -1,19 +1,19 @@
 {
-  "name": "tag",
+  "name": "metapod",
   "version": "1.0.0-beta.1",
   "description": "HTML generator",
-  "main": "src/tag.js",
+  "main": "src/metapod.js",
   "scripts": {
     "test": "karma start --single-run",
     "prebuild": "rm -rf dist && mkdir dist",
-    "build": "babel src/tag.js --modules umd -o dist/tag.js && uglifyjs dist/tag.js -o dist/tag.min.js",
-    "watch": "babel src/tag.js -w --modules umd -o dist/tag.js"
+    "build": "babel src/metapod.js --modules umd -o dist/metapod.js && uglifyjs dist/metapod.js -o dist/metapod.min.js",
+    "watch": "babel src/metapod.js -w --modules umd -o dist/metapod.js"
   },
   "author": "Vitor Nogueira <vnweb.contato@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ignicaodigitalbr/tag.git"
+    "url": "git+ssh://git@github.com/ignicaodigitalbr/metapod.git"
   },
   "keywords": [
     "tag",
@@ -22,9 +22,9 @@
     "elements"
   ],
   "bugs": {
-    "url": "https://github.com/ignicaodigitalbr/tag/issues"
+    "url": "https://github.com/ignicaodigitalbr/metapod/issues"
   },
-  "homepage": "https://github.com/ignicaodigitalbr/tag#readme",
+  "homepage": "https://github.com/ignicaodigitalbr/metapod#readme",
   "devDependencies": {
     "babel": "5.8.23",
     "babelify": "6.3.0",

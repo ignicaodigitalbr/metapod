@@ -6,17 +6,17 @@
 
   scope = document.getElementById('app');
 
-  h1 = tag.h1('Tag', { className: 'title', style: { color: 'red' } });
+  h1 = metapod.h1('Tag', { className: 'title', style: { color: 'red' } });
 
-  h2 = tag.h2(
+  h2 = metapod.h2(
     'Created by ',
-    tag.a('Ignição Digital', {
+    metapod.a('Ignição Digital', {
       href: 'http://www.ignicaodigital.com.br',
       className: ['btn', 'btn-info']
     })
   );
 
-  button = tag.button(
+  button = metapod.button(
     'Hover and Click me',
     {
       className: 'btn btn-default',
@@ -32,6 +32,6 @@
     }
   );
 
-  scope.appendChild(tag.div(h1, h2, button));
+  scope.appendChild(metapod.div(h1, h2, button));
 
 })();

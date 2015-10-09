@@ -1,6 +1,6 @@
 {
-  "name": "tag",
-  "main": "tag.js",
+  "name": "metapod",
+  "main": "src/metapod.js",
   "version": "1.0.0-beta.1",
   "authors": [
     "Vitor Nogueira <vnweb.contato@gmail.com>"
@@ -19,7 +19,7 @@
     "elements"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/ignicaodigitalbr/tag",
+  "homepage": "https://github.com/ignicaodigitalbr/metapod",
   "ignore": [
     "**/.*",
     "node_modules",

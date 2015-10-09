@@ -8,7 +8,7 @@
       exports: {}
     };
     factory(mod.exports, mod);
-    global.tag = mod.exports;
+    global.metapod = mod.exports;
   }
 })(this, function (exports, module) {
   'use strict';
@@ -27,7 +27,7 @@
    * Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
    * @type {Array}
    */
-  _private.tagNames = ['a', 'abbr', 'address', 'area', 'article', 'audio', 'b', 'base', 'bdi', 'bdo', 'body', 'br', 'button', 'canvas', 'caption', 'cite', 'code', 'col', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl', 'dt', 'em', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'i', 'iframe', 'img', 'input', 'kbd', 'keygen', 'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'menu', 'menuitem', 'meta', 'meter', 'nav', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'pre', 'progress', 'q', 'rp', 'rt', 'rtc', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'u', 'ul', 'var', 'video', 'wbr'];
+  _private.tagNames = ['a', 'abbr', 'address', 'area', 'article', 'aside', 'audio', 'b', 'base', 'bdi', 'bdo', 'body', 'br', 'button', 'canvas', 'caption', 'cite', 'code', 'col', 'colgroup', 'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl', 'dt', 'em', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'i', 'iframe', 'img', 'input', 'kbd', 'keygen', 'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'menu', 'menuitem', 'meta', 'meter', 'nav', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'pre', 'progress', 'q', 'rp', 'rt', 'rtc', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'u', 'ul', 'var', 'video', 'wbr'];
 
   /**
    * Properties appender functions
@@ -42,7 +42,9 @@
     className: function className(element, property, value) {
       value = value.constructor.name === 'String' ? value.split(' ') : value;
 
-      element.classList.add.apply(element.classList, value);
+      value.forEach(function (className) {
+        element.classList.add(className);
+      });
     },
     style: function style(element, property, styles) {
       for (var prop in styles) {
@@ -80,7 +82,7 @@
   /**
    * Builder element
    * @param  {String}     name
-   * @param  {Arguments}  attr
+   * @param  {Arguments}  attrs
    *
    * @return {HTMLObject} builded element
    */

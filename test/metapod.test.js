@@ -1,4 +1,4 @@
-import tag from '../src/tag.js';
+import metapod from '../src/metapod.js';
 
 describe('Test the generation of tag elements', () => {
   describe('Test the simple generation of tag elements', () => {
@@ -22,7 +22,7 @@ describe('Test the generation of tag elements', () => {
     tagsWithTextNode.forEach((tagName) => {
       it('Should to create a ' + tagName + ' tag', () => {
         var compareTag = document.createElement(tagName),
-            buildedTag = tag[tagName]('my nice text', {
+            buildedTag = metapod[tagName]('my nice text', {
               id: 'awesome-id'
             });
 
@@ -36,7 +36,7 @@ describe('Test the generation of tag elements', () => {
     tagsWithoutTextNode.forEach((tagName) => {
       it('Should to create a ' + tagName + ' tag', () => {
         var compareTag = document.createElement(tagName),
-            buildedTag = tag[tagName]({
+            buildedTag = metapod[tagName]({
                           id: 'awesome-id',
                           value: 'my value'
                         });
@@ -90,11 +90,11 @@ describe('Test the generation of tag elements', () => {
 
     it('Should to create selection with multiples options', () => {
       var compareTag = selectTag,
-          buildedTag = tag.select(
-                        tag.option(1, { value: 'value_1' }),
-                        tag.option(2, { value: 'value_2' }),
-                        tag.option(3, { value: 'value_3' }),
-                        tag.option(4, { value: 'value_4' }),
+          buildedTag = metapod.select(
+                        metapod.option(1, { value: 'value_1' }),
+                        metapod.option(2, { value: 'value_2' }),
+                        metapod.option(3, { value: 'value_3' }),
+                        metapod.option(4, { value: 'value_4' }),
                         { id: 'awesome-id' }
                       );
 
@@ -106,21 +106,21 @@ describe('Test the generation of tag elements', () => {
     it('Should to create div with multiples tags', () => {
       var compareTag = document.createElement('div'),
           spanTag    = document.createElement('span'),
-          buildedTag = tag.div(
-                        tag.span('my text', { id: 'caule' }),
-                        tag.ul(
-                          tag.li(1),
-                          tag.li(2),
-                          tag.li(3)
+          buildedTag = metapod.div(
+                        metapod.span('my text', { id: 'caule' }),
+                        metapod.ul(
+                          metapod.li(1),
+                          metapod.li(2),
+                          metapod.li(3)
                         ),
-                        tag.form(
-                          tag.input({ value: 'my value' }),
-                          tag.textarea('test text'),
-                          tag.select(
-                            tag.option(1, { value: 'value_1' }),
-                            tag.option(2, { value: 'value_2' }),
-                            tag.option(3, { value: 'value_3' }),
-                            tag.option(4, { value: 'value_4' })
+                        metapod.form(
+                          metapod.input({ value: 'my value' }),
+                          metapod.textarea('test text'),
+                          metapod.select(
+                            metapod.option(1, { value: 'value_1' }),
+                            metapod.option(2, { value: 'value_2' }),
+                            metapod.option(3, { value: 'value_3' }),
+                            metapod.option(4, { value: 'value_4' })
                           )
                         ),
                         { id: 'awesome-id' }
@@ -143,18 +143,18 @@ describe('Test the generation of tag elements', () => {
           buildedTag;
 
       for (var i = 0; i < numberTags; i++) {
-        arrayOfDivs.push(tag.div());
+        arrayOfDivs.push(metapod.div());
 
         compareTag.appendChild(document.createElement('div'));
       }
 
-      buildedTag = tag.div(arrayOfDivs);
+      buildedTag = metapod.div(arrayOfDivs);
 
       expect(buildedTag).toEqual(compareTag);
     });
 
     it('should create a div with other div returned in function', () => {
-      var buildedTag = tag.div(() => { return tag.div() }),
+      var buildedTag = metapod.div(() => { return metapod.div() }),
           compareTag = document.createElement('div');
 
       compareTag.appendChild(document.createElement('div'));
@@ -178,7 +178,7 @@ describe('Test the generation of tag elements', () => {
       });
 
       it('should add events in element', () => {
-        var button = tag.button({ events: events });
+        var button = metapod.button({ events: events });
 
         button.click();
 
@@ -199,7 +199,7 @@ describe('Test the generation of tag elements', () => {
       });
 
       it('should add array classes', () => {
-        var element = tag.div({ className: classes.array });
+        var element = metapod.div({ className: classes.array });
 
         classes.array.forEach((className) => {
           expect(element.classList.contains(className)).toBe(true);
@@ -207,7 +207,7 @@ describe('Test the generation of tag elements', () => {
       });
 
       it('should add string multi classes', () => {
-        var element = tag.div({ className: classes.stringMulti });
+        var element = metapod.div({ className: classes.stringMulti });
 
         classes.stringMulti.split(' ').forEach((className) => {
           expect(element.classList.contains(className)).toBe(true);
@@ -215,7 +215,7 @@ describe('Test the generation of tag elements', () => {
       });
 
       it('should add string simple classes', () => {
-        var element = tag.div({ className: classes.stringSimple });
+        var element = metapod.div({ className: classes.stringSimple });
 
         expect(element.classList.contains(classes.stringSimple)).toBe(true);
       });
@@ -232,7 +232,7 @@ describe('Test the generation of tag elements', () => {
       });
 
       it('should add style in element', () => {
-        var element = tag.div({ style: style });
+        var element = metapod.div({ style: style });
 
         for (var prop in style) {
           expect(element.style[prop]).toEqual(style[prop]);

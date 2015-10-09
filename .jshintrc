@@ -4,6 +4,6 @@
   "browserify": true,
   "jasmine": true,
   "globals": {
-    "tag": true
+    "metapod": true
   }
 }
