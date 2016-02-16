@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": 1,
+    "es6": true
+  },
+  "rules": {
+    "quotes": [2, "single"],
+    "indent": [2, 2, {
+      "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }
+    }]
+  },
+  "ecmaFeatures": {
+    "modules": true
+  }
+}
