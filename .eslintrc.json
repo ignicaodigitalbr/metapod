@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true,
+    "jasmine": true
+  },
+  "extends": "airbnb",
+  "installedESLint": true,
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-param-reassign": 0,
+    "no-plusplus": 0
+  }
+}
