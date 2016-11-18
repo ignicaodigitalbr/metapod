@@ -1,6 +1,6 @@
 {
   "name": "metapod",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "HTML generator",
   "main": "dist/metapod.min.js",
   "scripts": {
